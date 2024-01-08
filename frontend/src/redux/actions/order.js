@@ -1,7 +1,7 @@
 import axios from "axios";
 import { server } from "../../server";
 
-// get all orders of user
+// get Tất cả đơn hàng of user
 export const getAllOrdersOfUser = (userId) => async (dispatch) => {
   try {
     dispatch({
@@ -24,7 +24,7 @@ export const getAllOrdersOfUser = (userId) => async (dispatch) => {
   }
 };
 
-// get all orders of seller
+// get Tất cả đơn hàng of seller
 export const getAllOrdersOfShop = (shopId) => async (dispatch) => {
   try {
     dispatch({
@@ -47,7 +47,7 @@ export const getAllOrdersOfShop = (shopId) => async (dispatch) => {
   }
 };
 
-// get all orders of Admin
+// get Tất cả đơn hàng of Admin
 export const getAllOrdersOfAdmin = () => async (dispatch) => {
   try {
     dispatch({

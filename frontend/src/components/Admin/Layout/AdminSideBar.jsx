@@ -20,10 +20,11 @@ const AdminSideBar = ({ active }) => {
             color={`${active === 1 ? "crimson" : "#555"}`}
           />
           <h5
-            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 1 ? "text-[crimson]" : "text-[#555]"
-              }`}
+            className={`hidden 800px:block pl-2 text-[17px] font-[400] ${
+              active === 1 ? "text-[crimson]" : "text-[#555]"
+            }`}
           >
-            Dashboard
+            Bảng điều khiển
           </h5>
         </Link>
       </div>
@@ -34,10 +35,11 @@ const AdminSideBar = ({ active }) => {
             color={`${active === 2 ? "crimson" : "#555"}`}
           />
           <h5
-            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 2 ? "text-[crimson]" : "text-[#555]"
-              }`}
+            className={`hidden 800px:block pl-2 text-[17px] font-[400] ${
+              active === 2 ? "text-[crimson]" : "text-[#555]"
+            }`}
           >
-            Category
+            Danh mục sản phẩm
           </h5>
         </Link>
       </div>
@@ -49,10 +51,11 @@ const AdminSideBar = ({ active }) => {
             color={`${active === 3 ? "crimson" : "#555"}`}
           />
           <h5
-            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 3 ? "text-[crimson]" : "text-[#555]"
-              }`}
+            className={`hidden 800px:block pl-2 text-[17px] font-[400] ${
+              active === 3 ? "text-[crimson]" : "text-[#555]"
+            }`}
           >
-            All Orders
+            Tất cả đơn hàng
           </h5>
         </Link>
       </div>
@@ -64,10 +67,11 @@ const AdminSideBar = ({ active }) => {
             color={`${active === 4 ? "crimson" : "#555"}`}
           />
           <h5
-            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 4 ? "text-[crimson]" : "text-[#555]"
-              }`}
+            className={`hidden 800px:block pl-2 text-[17px] font-[400] ${
+              active === 4 ? "text-[crimson]" : "text-[#555]"
+            }`}
           >
-            All Sellers
+            Tất cả người bán
           </h5>
         </Link>
       </div>
@@ -79,25 +83,24 @@ const AdminSideBar = ({ active }) => {
             color={`${active === 5 ? "crimson" : "#555"}`}
           />
           <h5
-            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 5 ? "text-[crimson]" : "text-[#555]"
-              }`}
+            className={`hidden 800px:block pl-2 text-[17px] font-[400] ${
+              active === 5 ? "text-[crimson]" : "text-[#555]"
+            }`}
           >
-            All Users
+            Tất cả người dùng
           </h5>
         </Link>
       </div>
 
       <div className="w-full flex items-center p-4">
         <Link to="/admin-products" className="w-full flex items-center">
-          <BsHandbag
-            size={30}
-            color={`${active === 6 ? "crimson" : "#555"}`}
-          />
+          <BsHandbag size={30} color={`${active === 6 ? "crimson" : "#555"}`} />
           <h5
-            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 6 ? "text-[crimson]" : "text-[#555]"
-              }`}
+            className={`hidden 800px:block pl-2 text-[17px] font-[400] ${
+              active === 6 ? "text-[crimson]" : "text-[#555]"
+            }`}
           >
-            All Products
+            Tất cả sản phẩm
           </h5>
         </Link>
       </div>
@@ -109,65 +112,42 @@ const AdminSideBar = ({ active }) => {
             color={`${active === 7 ? "crimson" : "#555"}`}
           />
           <h5
-            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 7 ? "text-[crimson]" : "text-[#555]"
-              }`}
+            className={`hidden 800px:block pl-2 text-[17px] font-[400] ${
+              active === 7 ? "text-[crimson]" : "text-[#555]"
+            }`}
           >
-            All Events
+            Tất cả sự kiện
           </h5>
         </Link>
       </div>
 
-
-
       <div className="w-full flex items-center p-4">
-        <Link
-          to="/admin-withdraw-request"
-          className="w-full flex items-center"
-        >
+        <Link to="/admin-withdraw-request" className="w-full flex items-center">
           <CiMoneyBill
             size={30}
             color={`${active === 8 ? "crimson" : "#555"}`}
           />
           <h5
-            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 8 ? "text-[crimson]" : "text-[#555]"
-              }`}
+            className={`hidden 800px:block pl-2 text-[17px] font-[400] ${
+              active === 8 ? "text-[crimson]" : "text-[#555]"
+            }`}
           >
-            Withdraw Request
-          </h5>
-        </Link>
-      </div>
-
-      <div className="w-full flex items-center p-4">
-        <Link
-          to="/admin-create-category"
-          className="w-full flex items-center"
-        >
-          <AiOutlineSetting
-            size={30}
-            color={`${active === 9 ? "crimson" : "#555"}`}
-          />
-          <h5
-            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 9 ? "text-[crimson]" : "text-[#555]"
-              }`}
-          >
-            Create Category
+            Yêu cầu rút tiền
           </h5>
         </Link>
       </div>
       <div className="w-full flex items-center p-4">
-        <Link
-          to="/profile"
-          className="w-full flex items-center"
-        >
+        <Link to="/profile" className="w-full flex items-center">
           <AiOutlineSetting
             size={30}
             color={`${active === 10 ? "crimson" : "#555"}`}
           />
           <h5
-            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 10 ? "text-[crimson]" : "text-[#555]"
-              }`}
+            className={`hidden 800px:block pl-2 text-[17px] font-[400] ${
+              active === 10 ? "text-[crimson]" : "text-[#555]"
+            }`}
           >
-            Settings
+            Cài đặt
           </h5>
         </Link>
       </div>

@@ -18,7 +18,7 @@ const AllOrders = () => {
   }, [dispatch]);
 
   const columns = [
-    { field: "id", headerName: "Order ID", minWidth: 150, flex: 0.7 },
+    { field: "id", headerName: "ID đơn hàng", minWidth: 150, flex: 0.7 },
 
     {
       field: "status",

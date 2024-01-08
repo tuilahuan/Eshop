@@ -12,7 +12,7 @@ const AllWithdraw = () => {
   const [data, setData] = useState([]);
   const [open, setOpen] = useState(false);
   const [withdrawData, setWithdrawData] = useState();
-  const [withdrawStatus,setWithdrawStatus] = useState('Processing');
+  const [withdrawStatus, setWithdrawStatus] = useState("Processing");
 
   useEffect(() => {
     axios
@@ -28,51 +28,52 @@ const AllWithdraw = () => {
   }, []);
 
   const columns = [
-    { field: "id", headerName: "Withdraw Id", minWidth: 150, flex: 0.7 },
+    { field: "id", headerName: "ID rút tiền", minWidth: 150, flex: 0.7 },
     {
       field: "name",
-      headerName: "Shop Name",
+      headerName: "Tên cửa hàng",
       minWidth: 180,
       flex: 1.4,
     },
     {
       field: "shopId",
-      headerName: "Shop Id",
+      headerName: "ID cửa hàng",
       minWidth: 180,
       flex: 1.4,
     },
     {
       field: "amount",
-      headerName: "Amount",
+      headerName: "Số tiền",
       minWidth: 100,
       flex: 0.6,
     },
     {
       field: "status",
-      headerName: "status",
+      headerName: "Trạng thái",
       type: "text",
       minWidth: 80,
       flex: 0.5,
     },
     {
       field: "createdAt",
-      headerName: "Request given at",
+      headerName: "Ngày rút",
       type: "number",
       minWidth: 130,
       flex: 0.6,
     },
     {
       field: " ",
-      headerName: "Update Status",
+      headerName: "Cập nhật trạng thái",
       type: "number",
       minWidth: 130,
       flex: 0.6,
       renderCell: (params) => {
-
         return (
           <BsPencil
             size={20}
-            className={`${params.row.status !== "Processing" ? 'hidden' : '' } mr-5 cursor-pointer`}
+            className={`${
+              params.row.status !== "Processing" ? "hidden" : ""
+            } mr-5 cursor-pointer`}
             onClick={() => setOpen(true) || setWithdrawData(params.row)}
           />
         );
@@ -82,9 +83,13 @@ const AllWithdraw = () => {
 
   const handleSubmit = async () => {
     await axios
-      .put(`${server}/withdraw/update-withdraw-request/${withdrawData.id}`,{
-        sellerId: withdrawData.shopId,
-      },{withCredentials: true})
+      .put(
+        `${server}/withdraw/update-withdraw-request/${withdrawData.id}`,
+        {
+          sellerId: withdrawData.shopId,
+        },
+        { withCredentials: true }
+      )
       .then((res) => {
         toast.success("Withdraw request updated successfully!");
         setData(res.data.withdraws);
