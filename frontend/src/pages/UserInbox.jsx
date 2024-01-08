@@ -161,7 +161,6 @@ const UserInbox = () => {
   };
 
   const imageSendingHandler = async (e) => {
-
     const receiverId = currentChat.members.find(
       (member) => member !== user._id
     );
@@ -174,15 +173,12 @@ const UserInbox = () => {
 
     try {
       await axios
-        .post(
-          `${server}/message/create-new-message`,
-          {
-            images: e,
-            sender: user._id,
-            text: newMessage,
-            conversationId: currentChat._id,
-          }
-        )
+        .post(`${server}/message/create-new-message`, {
+          images: e,
+          sender: user._id,
+          text: newMessage,
+          conversationId: currentChat._id,
+        })
         .then((res) => {
           setImages();
           setMessages([...messages, res.data.message]);
@@ -213,7 +209,7 @@ const UserInbox = () => {
         <>
           <Header />
           <h1 className="text-center text-[30px] py-3 font-Poppins">
-            All Messages
+            Tất cả tin nhắn
           </h1>
           {/* All messages list */}
           {conversations &&
@@ -263,7 +259,7 @@ const MessageList = ({
   userData,
   online,
   setActiveStatus,
-  loading
+  loading,
 }) => {
   const [active, setActive] = useState(0);
   const [user, setUser] = useState([]);
@@ -289,8 +285,9 @@ const MessageList = ({
 
   return (
     <div
-      className={`w-full flex p-3 px-3 ${active === index ? "bg-[#00000010]" : "bg-transparent"
-        }  cursor-pointer`}
+      className={`w-full flex p-3 px-3 ${
+        active === index ? "bg-[#00000010]" : "bg-transparent"
+      }  cursor-pointer`}
       onClick={(e) =>
         setActive(index) ||
         handleClick(data._id) ||
@@ -363,8 +360,9 @@ const SellerInbox = ({
         {messages &&
           messages.map((item, index) => (
             <div
-              className={`flex w-full my-2 ${item.sender === sellerId ? "justify-end" : "justify-start"
-                }`}
+              className={`flex w-full my-2 ${
+                item.sender === sellerId ? "justify-end" : "justify-start"
+              }`}
               ref={scrollRef}
             >
               {item.sender !== sellerId && (
@@ -383,8 +381,9 @@ const SellerInbox = ({
               {item.text !== "" && (
                 <div>
                   <div
-                    className={`w-max p-2 rounded ${item.sender === sellerId ? "bg-[#000]" : "bg-[#38c776]"
-                      } text-[#fff] h-min`}
+                    className={`w-max p-2 rounded ${
+                      item.sender === sellerId ? "bg-[#000]" : "bg-[#38c776]"
+                    } text-[#fff] h-min`}
                   >
                     <p>{item.text}</p>
                   </div>

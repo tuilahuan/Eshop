@@ -23,20 +23,20 @@ const AllUsers = () => {
 
   const handleDelete = async (id) => {
     await axios
-    .delete(`${server}/user/delete-user/${id}`, { withCredentials: true })
-    .then((res) => {
-      toast.success(res.data.message);
-    });
+      .delete(`${server}/user/delete-user/${id}`, { withCredentials: true })
+      .then((res) => {
+        toast.success(res.data.message);
+      });
 
-  dispatch(getAllUsers());
+    dispatch(getAllUsers());
   };
 
   const columns = [
-    { field: "id", headerName: "User ID", minWidth: 150, flex: 0.7 },
+    { field: "id", headerName: "ID người dùng", minWidth: 150, flex: 0.7 },
 
     {
       field: "name",
-      headerName: "name",
+      headerName: "Họ và tên",
       minWidth: 130,
       flex: 0.7,
     },
@@ -49,7 +49,7 @@ const AllUsers = () => {
     },
     {
       field: "role",
-      headerName: "User Role",
+      headerName: "Vai trò",
       type: "text",
       minWidth: 130,
       flex: 0.7,
@@ -57,7 +57,7 @@ const AllUsers = () => {
 
     {
       field: "joinedAt",
-      headerName: "joinedAt",
+      headerName: "Ngày đăng ký",
       type: "text",
       minWidth: 130,
       flex: 0.8,
@@ -67,7 +67,7 @@ const AllUsers = () => {
       field: " ",
       flex: 1,
       minWidth: 150,
-      headerName: "Delete User",
+      headerName: "Xoá người dùng",
       type: "number",
       sortable: false,
       renderCell: (params) => {
@@ -97,7 +97,7 @@ const AllUsers = () => {
   return (
     <div className="w-full flex justify-center pt-5">
       <div className="w-[97%]">
-        <h3 className="text-[22px] font-Poppins pb-2">All Users</h3>
+        <h3 className="text-[22px] font-Poppins pb-2">Tất cả người dùng</h3>
         <div className="w-full min-h-[45vh] bg-white rounded">
           <DataGrid
             rows={row}
@@ -125,7 +125,7 @@ const AllUsers = () => {
                 </div>
                 <div
                   className={`${styles.button} text-white text-[18px] !h-[42px] ml-4`}
-                  onClick={() =>  setOpen(false) || handleDelete(userId)}
+                  onClick={() => setOpen(false) || handleDelete(userId)}
                 >
                   confirm
                 </div>

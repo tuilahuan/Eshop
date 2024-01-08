@@ -103,7 +103,7 @@ const ShopSettings = () => {
         >
           <div className="w-[100%] flex items-center flex-col 800px:w-[50%] mt-5">
             <div className="w-full pl-[3%]">
-              <label className="block pb-2">Shop Name</label>
+              <label className="block pb-2">Tên cửa hàng</label>
             </div>
             <input
               type="name"
@@ -116,7 +116,7 @@ const ShopSettings = () => {
           </div>
           <div className="w-[100%] flex items-center flex-col 800px:w-[50%] mt-5">
             <div className="w-full pl-[3%]">
-              <label className="block pb-2">Shop description</label>
+              <label className="block pb-2">Mô tả cửa hàng</label>
             </div>
             <input
               type="name"
@@ -132,7 +132,7 @@ const ShopSettings = () => {
           </div>
           <div className="w-[100%] flex items-center flex-col 800px:w-[50%] mt-5">
             <div className="w-full pl-[3%]">
-              <label className="block pb-2">Shop Address</label>
+              <label className="block pb-2">Địa chỉ</label>
             </div>
             <input
               type="name"
@@ -146,7 +146,7 @@ const ShopSettings = () => {
 
           <div className="w-[100%] flex items-center flex-col 800px:w-[50%] mt-5">
             <div className="w-full pl-[3%]">
-              <label className="block pb-2">Shop Phone Number</label>
+              <label className="block pb-2">Số điện thoại</label>
             </div>
             <input
               type="number"
@@ -160,7 +160,7 @@ const ShopSettings = () => {
 
           <div className="w-[100%] flex items-center flex-col 800px:w-[50%] mt-5">
             <div className="w-full pl-[3%]">
-              <label className="block pb-2">Shop Zip Code</label>
+              <label className="block pb-2">Mã Zip</label>
             </div>
             <input
               type="number"
@@ -172,11 +172,11 @@ const ShopSettings = () => {
             />
           </div>
 
-          <div className="w-[100%] flex items-center flex-col 800px:w-[50%] mt-5">
+          <div className="w-[100%] flex items-center flex-col 800px:w-[47%] mt-5">
             <input
               type="submit"
-              value="Update Shop"
-              className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
+              value="Cập nhật"
+              className={`${styles.input} focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 cursor-pointer`}
               required
               readOnly
             />

@@ -49,7 +49,7 @@ router.post(
   })
 );
 
-// get all orders of user
+// get Tất cả đơn hàng of user
 router.get(
   "/get-all-orders/:userId",
   catchAsyncErrors(async (req, res, next) => {
@@ -68,7 +68,7 @@ router.get(
   })
 );
 
-// get all orders of seller
+// get Tất cả đơn hàng of seller
 router.get(
   "/get-seller-all-orders/:shopId",
   catchAsyncErrors(async (req, res, next) => {
@@ -111,7 +111,7 @@ router.put(
       if (req.body.status === "Delivered") {
         order.deliveredAt = Date.now();
         order.paymentInfo.status = "Succeeded";
-        const serviceCharge = order.totalPrice * .10;
+        const serviceCharge = order.totalPrice * 0.1;
         await updateSellerInfo(order.totalPrice - serviceCharge);
       }
 
@@ -133,7 +133,7 @@ router.put(
 
       async function updateSellerInfo(amount) {
         const seller = await Shop.findById(req.seller.id);
-        
+
         seller.availableBalance = amount;
 
         await seller.save();
@@ -211,7 +211,7 @@ router.put(
   })
 );
 
-// all orders --- for admin
+// Tất cả đơn hàng --- for admin
 router.get(
   "/admin-all-orders",
   isAuthenticated,

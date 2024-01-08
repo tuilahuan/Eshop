@@ -34,7 +34,9 @@ const Header = ({ activeHeading }) => {
     // Thực hiện gọi API backend để lấy danh sách categories
     const fetchCategories = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/v2/categories/categories");
+        const response = await fetch(
+          "http://localhost:8000/api/v2/categories/categories"
+        );
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -47,7 +49,6 @@ const Header = ({ activeHeading }) => {
 
     fetchCategories();
   }, []);
-
 
   const handleSearchChange = (e) => {
     const term = e.target.value;
@@ -74,21 +75,21 @@ const Header = ({ activeHeading }) => {
       <div className={`${styles.section}`}>
         <div className="hidden 800px:h-[50px] 800px:my-[20px] 800px:flex items-center justify-between">
           <div>
-            <Link to="/">
-              <img
-                src="https://shopo.quomodothemes.website/assets/images/logo.svg"
-                alt=""
-              />
+            <Link to="/" className="flex">
+              <img src="/logo.webp" alt="" className="h-24 w-24" />
+              <div className="text-center my-auto font-bold text-[20px] uppercase text-[#ff634f]">
+                Organic <span className="text-black">Shop</span>
+              </div>
             </Link>
           </div>
           {/* search box */}
           <div className="w-[50%] relative">
             <input
               type="text"
-              placeholder="Search Product..."
+              placeholder="Nhập thứ bạn cần tìm..."
               value={searchTerm}
               onChange={handleSearchChange}
-              className="h-[40px] w-full px-2 border-[#3957db] border-[2px] rounded-md"
+              className="h-[40px] w-full px-2 border-[#b63a29] border-[2px] rounded-md"
             />
             <AiOutlineSearch
               size={30}
@@ -115,19 +116,23 @@ const Header = ({ activeHeading }) => {
             ) : null}
           </div>
 
-          <div className={`${styles.button}`}>
+          <button
+            type="button"
+            class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+          >
             <Link to={`${isSeller ? "/dashboard" : "/shop-create"}`}>
               <h1 className="text-[#fff] flex items-center">
-                {isSeller ? "Go Dashboard" : "Become Seller"}{" "}
+                {isSeller ? "Trang quản lý" : "Đăng ký bán hàng"}{" "}
                 <IoIosArrowForward className="ml-1" />
               </h1>
             </Link>
-          </div>
+          </button>
         </div>
       </div>
       <div
-        className={`${active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
-          } transition hidden 800px:flex items-center justify-between w-full bg-[#3321c8] h-[70px]`}
+        className={`${
+          active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
+        } transition hidden 800px:flex items-center justify-between w-full bg-[#b63a29] h-[70px]`}
       >
         <div
           className={`${styles.section} relative ${styles.noramlFlex} justify-between`}
@@ -139,7 +144,7 @@ const Header = ({ activeHeading }) => {
               <button
                 className={`h-[100%] w-full flex justify-between items-center pl-10 bg-white font-sans text-lg font-[500] select-none rounded-t-md`}
               >
-                All Categories
+                Danh mục sản phẩm
               </button>
               <IoIosArrowDown
                 size={20}
@@ -218,8 +223,9 @@ const Header = ({ activeHeading }) => {
 
       {/* mobile header */}
       <div
-        className={`${active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
-          }
+        className={`${
+          active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
+        }
       w-full h-[60px] bg-[#fff] z-50 top-0 left-0 shadow-sm 800px:hidden`}
       >
         <div className="w-full flex items-center justify-between">
@@ -285,13 +291,13 @@ const Header = ({ activeHeading }) => {
               <div className="my-8 w-[92%] m-auto h-[40px relative]">
                 <input
                   type="search"
-                  placeholder="Search Product..."
+                  placeholder="Nhập thứ bạn cần tìm..."
                   className="h-[40px] w-full px-2 border-[#3957db] border-[2px] rounded-md"
                   value={searchTerm}
                   onChange={handleSearchChange}
                 />
                 {searchData && (
-                  <div className="absolute bg-[#fff] z-10 shadow w-full left-0 p-3">
+                  <div className="absolute bg-[#fff] z-10 shadow w-full left-0">
                     {searchData.map((i) => {
                       const d = i.name;
 
@@ -314,13 +320,16 @@ const Header = ({ activeHeading }) => {
               </div>
 
               <Navbar active={activeHeading} />
-              <div className={`${styles.button} ml-4 !rounded-[4px]`}>
+              <button
+                type="button"
+                class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+              >
                 <Link to="/shop-create">
-                  <h1 className="text-[#fff] flex items-center">
-                    Become Seller <IoIosArrowForward className="ml-1" />
+                  <h1 className="text-[#fff] flex items-center px-3">
+                    Đăng ký bán hàng <IoIosArrowForward className="ml-1" />
                   </h1>
                 </Link>
-              </div>
+              </button>
               <br />
               <br />
               <br />

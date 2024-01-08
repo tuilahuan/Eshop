@@ -11,11 +11,11 @@ const DashboardHeader = () => {
   return (
     <div className="w-full h-[80px] bg-white shadow sticky top-0 left-0 z-30 flex items-center justify-between px-4">
       <div>
-        <Link to="/dashboard">
-          <img
-            src="https://shopo.quomodothemes.website/assets/images/logo.svg"
-            alt=""
-          />
+        <Link to="/dashboard" className="flex">
+          <img src="/logo.webp" alt="" className="h-24 w-24" />
+          <div className="text-center my-auto font-bold text-[20px] uppercase text-[#ff634f]">
+            Organic <span className="text-black">Shop</span>
+          </div>
         </Link>
       </div>
       <div className="flex items-center">

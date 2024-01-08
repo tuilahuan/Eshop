@@ -19,7 +19,7 @@ export const sellerReducer = createReducer(initialState, {
     state.isSeller = false;
   },
 
-  // get all sellers ---admin
+  // get Tất cả người bán ---admin
   getAllSellersRequest: (state) => {
     state.isLoading = true;
   },
